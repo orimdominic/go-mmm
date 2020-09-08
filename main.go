@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"sort"
 	"strconv"
@@ -46,18 +47,32 @@ func mean(nums []float64) float64 {
 	return sum / float64(len(nums))
 }
 
-func median(nums []float64) float64{
+func median(nums []float64) float64 {
 	sort.Float64s(nums)
 	if len(nums)%2 == 0 {
 		id := (len(nums) - 1) / 2
 		return float64((nums[id] + nums[id+1]) / 2)
 	} else {
-		return float64(nums[(len(nums) - 1) / 2])
+		return float64(nums[(len(nums)-1)/2])
 	}
 }
 
 func mode(nums []float64) float64 {
-	return 0.00
+	modMap := make(map[float64]float64)
+	for _, num := range nums {
+		modMap[num]++
+	}
+	max := math.Inf(-1)
+	mod := 0.00
+	for k, v := range modMap {
+		if v >= max {
+			max = v
+			mod = k
+		}
+	}
+	return mod
+	// How do I find the mode in a set where >1 numbers have the same highest freq?
+	// How do I return nil or false in that case as there is no mode (float, bool) as return?
 }
 
 func main() {
