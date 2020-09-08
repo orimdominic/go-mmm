@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strconv"
 )
 
@@ -44,8 +45,15 @@ func mean(nums []float64) float64 {
 	}
 	return sum / float64(len(nums))
 }
-func median(nums []float64) float64 {
-	return 0.00
+
+func median(nums []float64) float64{
+	sort.Float64s(nums)
+	if len(nums)%2 == 0 {
+		id := (len(nums) - 1) / 2
+		return float64((nums[id] + nums[id+1]) / 2)
+	} else {
+		return float64(nums[(len(nums) - 1) / 2])
+	}
 }
 
 func mode(nums []float64) float64 {
