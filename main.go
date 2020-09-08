@@ -35,9 +35,8 @@ func getNums(f *os.File) (nums []float64) {
 }
 
 func mean(nums []float64) float64 {
-
+	return 0.00
 }
-
 func median(nums []float64) float64 {
 	return 0.00
 }
@@ -48,5 +47,5 @@ func mode(nums []float64) float64 {
 
 func main() {
 	file := getFile("data.txt")
-	nums := getNums(file)
+	_ = getNums(file)
 }
