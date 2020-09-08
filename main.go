@@ -35,7 +35,14 @@ func getNums(f *os.File) (nums []float64) {
 }
 
 func mean(nums []float64) float64 {
-	return 0.00
+	if len(nums) == 0 {
+		return 0.00
+	}
+	sum := 0.00
+	for _, num := range nums {
+		sum += float64(num)
+	}
+	return sum / float64(len(nums))
 }
 func median(nums []float64) float64 {
 	return 0.00
