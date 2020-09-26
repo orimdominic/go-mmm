@@ -84,5 +84,8 @@ func mode(nums []float64) interface{} {
 
 func main() {
 	file := getFile("data.txt")
-	_ = getNums(file)
+	nums:= getNums(file)
+	fmt.Printf("%-6v %.2f\n","Mean", mean(nums))
+	fmt.Printf("%-6v %.2f\n","Median", median(nums))
+	fmt.Printf("%-6v %.2f\n", "Mode", mode(nums))
 }
