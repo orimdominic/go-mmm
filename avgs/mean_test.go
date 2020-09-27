@@ -1,4 +1,4 @@
-package main
+package avgs
 
 import (
 	"testing"
@@ -16,7 +16,7 @@ func TestMean(t *testing.T) {
 		testMean{list: []float64{10, 20, 40, 25, 30, 31}, mean: 26},
 	}
 	for _, test := range tests {
-		got := mean(test.list)
+		got := Mean(test.list)
 		want := test.mean
 		if want != got {
 			t.Error("\ndata:", test.list, "\nwant:", want, "\ngot:", got)
