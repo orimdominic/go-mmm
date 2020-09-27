@@ -1,4 +1,4 @@
-package main
+package avgs
 
 import (
 	"testing"
@@ -16,7 +16,7 @@ func TestMedian(t *testing.T) {
 		testMedian{list: []float64{10, 20, 40, 25, 30, 31}, median: 27.5},
 	}
 	for _, test := range tests {
-		got := median(test.list)
+		got := Median(test.list)
 		want := test.median
 		if want != got {
 			t.Error("\ndata:", test.list, "\nwant:", want, "\ngot:", got)

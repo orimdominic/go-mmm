@@ -1,4 +1,4 @@
-package main
+package avgs
 
 import (
 	"testing"
@@ -16,7 +16,7 @@ func TestMode(t *testing.T) {
 		testMode{list: []float64{10, 20, 40, 25, 30, 31}, mode: nil},
 	}
 	for _, test := range tests {
-		got := mode(test.list)
+		got := Mode(test.list)
 		want := test.mode
 		if want != got {
 			t.Error("\ndata:", test.list, "\nwant:", want, "\ngot:", got)
